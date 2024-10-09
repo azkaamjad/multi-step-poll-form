@@ -1,0 +1,105 @@
+.poll-container {
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+
+  .poll-step-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    // justify-content: center;
+    color: white;
+    height: 100%;
+    width:100%;
+    @media (max-width: 525px) {
+      flex-direction: column;
+    }
+
+    .poll-step {
+      flex-direction: row;
+      align-items: center;
+
+      width: 50%;
+      padding: 10px;
+      height: 100%;
+      display: flex;
+      background-color: #6f42c1;
+      @media (max-width: 525px) {
+        width: 100%;
+      }
+    }
+
+    .poll-options {
+      display: flex;
+      justify-content: space-around;
+      width: 50%;
+      @media (max-width: 525px) {
+        width: 100%;
+      }
+
+      // Button styles
+      button {
+        border: 2px solid transparent; // Ensure consistent sizing
+        border-radius: 50%; // Circular buttons
+        transition: all 0.3s ease;
+
+        &:hover {
+          background-color: rgba(255, 255, 255, 0.1); // Hover effect
+        }
+      }
+    }
+
+    .feedback-text {
+      margin-top: 20px;
+      font-size: 18px;
+      text-align: center;
+      color: #333;
+    }
+    .last-poll-output {
+      display: flex;
+      flex-direction: column;
+      font-size: 25px;
+    }
+  }
+
+  // Animation styles
+  // Animation styles
+  .poll-transition {
+    transition: all 0.5s ease-in-out; // Adjust duration and easing
+    &.slide-in {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    &.slide-out {
+      transform: translateY(-100%);
+      opacity: 0;
+    }
+  }
+}
+.poll-progress {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start; // Align dots to the left
+  margin-right: 20px; // Space between dots and poll questions
+}
+
+.dots-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.dot {
+  width: 20px; // Adjust size as needed
+  height: 20px;
+  border-radius: 50%;
+  background-color: grey; // Unfilled color
+  margin: 5px 0; // Space between dots
+  transition: background-color 0.3s ease; // Smooth transition for filled state
+}
+
+.dot.filled {
+  background-color: #ffffff; // Filled color
+}
