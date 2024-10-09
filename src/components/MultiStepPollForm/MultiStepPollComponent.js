@@ -1,8 +1,22 @@
-import React, { useState } from 'react';
-import { Container, Row, Col, Button, OverlayTrigger, Tooltip } from 'react-bootstrap';
-import './MultiStepPoll.scss'; 
+import React, { useState } from "react";
+import {
+  Container,
+  Row,
+  Col,
+  Button,
+  OverlayTrigger,
+  Tooltip,
+} from "react-bootstrap";
+import "./MultiStepPoll.scss";
 
-const PollStep = ({ title, onSelect, renderDots, isAnimating, isFinalPoll, finalData}) => {
+const PollStep = ({
+  title,
+  onSelect,
+  renderDots,
+  isAnimating,
+  isFinalPoll,
+  finalData,
+}) => {
   const [selectedOption, setSelectedOption] = useState(null);
 
   const handleSelect = (option) => {
@@ -19,19 +33,24 @@ const PollStep = ({ title, onSelect, renderDots, isAnimating, isFinalPoll, final
   return (
     <div className="poll-step-container">
       <div className="poll-step">
-        <div className="poll-progress">
-          {renderDots()}
-        </div>
-        {!isFinalPoll ? (
-          <h2 className={`poll-transition ${isAnimating ? 'slide-out' : 'slide-in'}`}  data-testid="poll-step">{title}</h2>
-        ) : (
-          <div className="last-poll-output">
-          {finalData?.map((detail, index) => (
-            <div key={index} className="summary-item"> 
-              <strong>{detail.question}</strong>: {detail.answer} 
-            </div>
-          ))}
+        <div className="poll-progress">{renderDots()}</div>
+        {isFinalPoll ? (
+          <div className="last-poll-output slide-in-left">
+            {finalData?.map((detail, index) => (
+              <div key={index} className="summary-item">
+                <strong>{detail.question}</strong>: {detail.answer}
+              </div>
+            ))}
           </div>
+        ) : (
+          <h2
+            className={`poll-transition ${
+              isAnimating ? "slide-out" : "slide-in"
+            }`}
+            data-testid="poll-step"
+          >
+            {title}
+          </h2>
         )}
       </div>
 
@@ -41,13 +60,16 @@ const PollStep = ({ title, onSelect, renderDots, isAnimating, isFinalPoll, final
             <OverlayTrigger
               placement="top"
               delay={{ show: 250, hide: 400 }}
-              overlay={(props) => renderTooltip(props, "Great!")}>
+              overlay={(props) => renderTooltip(props, "Great!")}
+            >
               <Button
-                variant={selectedOption === 'Great!' ? 'primary' : 'outline-secondary'}
-                onClick={() => handleSelect('Great!')}
+                variant={
+                  selectedOption === "Great!" ? "primary" : "outline-secondary"
+                }
+                onClick={() => handleSelect("Great!")}
                 className="poll-button"
               >
-        &#128077;  
+                &#128077;
               </Button>
             </OverlayTrigger>
           </Col>
@@ -55,10 +77,13 @@ const PollStep = ({ title, onSelect, renderDots, isAnimating, isFinalPoll, final
             <OverlayTrigger
               placement="top"
               delay={{ show: 250, hide: 400 }}
-              overlay={(props) => renderTooltip(props, "Neutral")}>
+              overlay={(props) => renderTooltip(props, "Neutral")}
+            >
               <Button
-                variant={selectedOption === 'neutral' ? 'primary' : 'outline-secondary'}
-                onClick={() => handleSelect('neutral')}
+                variant={
+                  selectedOption === "neutral" ? "primary" : "outline-secondary"
+                }
+                onClick={() => handleSelect("neutral")}
                 className="poll-button"
               >
                 &#129300;
@@ -69,13 +94,18 @@ const PollStep = ({ title, onSelect, renderDots, isAnimating, isFinalPoll, final
             <OverlayTrigger
               placement="top"
               delay={{ show: 250, hide: 400 }}
-              overlay={(props) => renderTooltip(props, "Not Good")}>
+              overlay={(props) => renderTooltip(props, "Not Good")}
+            >
               <Button
-                variant={selectedOption === 'Not Good' ? 'primary' : 'outline-secondary'}
-                onClick={() => handleSelect('Not Good')}
+                variant={
+                  selectedOption === "Not Good"
+                    ? "primary"
+                    : "outline-secondary"
+                }
+                onClick={() => handleSelect("Not Good")}
                 className="poll-button"
               >
-             &#128078;
+                &#128078;
               </Button>
             </OverlayTrigger>
           </Col>
