@@ -28,8 +28,8 @@ const PollStep = ({ title, onSelect, renderDots, isAnimating, isFinalPoll, final
         ) : (
           <div className="last-poll-output">
           {finalData?.map((detail, index) => (
-            <div key={index} className="summary-item"> {/* Add a unique key */}
-              <strong>{detail.question}</strong>: {detail.answer} {/* Assuming detail has question and answer properties */}
+            <div key={index} className="summary-item"> 
+              <strong>{detail.question}</strong>: {detail.answer} 
             </div>
           ))}
           </div>

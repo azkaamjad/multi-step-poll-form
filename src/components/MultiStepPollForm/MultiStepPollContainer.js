@@ -21,8 +21,6 @@ const PollContainer = () => {
     const updatedAnswers = [...answers];
     updatedAnswers[step] = option;
     setAnswers(updatedAnswers);
-
-    // Save the current question and selected answer to finalData
     const updatedFinalData = [...finalData];
     updatedFinalData[step] = {
       question: questions[step],
@@ -32,7 +30,6 @@ const PollContainer = () => {
 
     // Start the animation
     setIsAnimating(true);
-
     // Move to the next step or submit final data if it's the last step
     setTimeout(() => {
       nextStep(updatedFinalData);
@@ -98,7 +95,7 @@ const PollContainer = () => {
     <div className="poll-container" data-testid="poll-container">
       <div className={`poll-step-container`}>
         <PollStep
-         data-testid="poll-step" // Ensure this is included here
+         data-testid="poll-step" 
           title={!isFinalPoll ? questions[step] : ""}
           onSelect={handleSelectOption}
           renderDots={renderDots}

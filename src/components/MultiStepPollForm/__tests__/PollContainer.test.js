@@ -22,18 +22,14 @@ describe('PollContainer', () => {
 
     // Wait for the dots to be rendered
     await waitFor(() => {
-      // Verify that there are 6 question dots
+      // Verify that there are 4 question dots
       const dots = [];
       for (let i = 0; i < 4; i++) {
         dots?.push(screen?.getByTestId(`dot-${i}`));
       }
-
-      // Check for the final dot
       const finalDot = screen?.getByTestId('final-dot');
-
-      // Assertions
       expect(dots.length)?.toBe(4);
-      expect(finalDot)?.toBeInTheDocument(); // Check that the final dot is also rendered
+      expect(finalDot)?.toBeInTheDocument(); 
     });
   });
 });
