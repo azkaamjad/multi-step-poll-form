@@ -7,10 +7,10 @@ A React.js app with a multi-step poll form featuring a custom vertical carousel,
 - [Features](#features)
 - [Technologies Used](#technologies-used)
 - [Installation](#installation)
-- [Usage](#usage)
-- [Testing](#testing)
-- [Contributing](#contributing)
-- [License](#license)
+- [Clone the Repository](#clone-the-repository)
+- [Install Dependencies](#install-dependencies)
+- [Run the Application](#run-the-application)
+- [Run Tests](#run-tests)
 
 ## Features
 
@@ -57,9 +57,6 @@ yarn test
 #### Coverage Report
 yarn test -- --coverage
 
-![Screenshot from 2024-10-09 13-00-23](https://github.com/user-attachments/assets/4f85a226-fa01-419c-99b7-4d4edae0c465)
-![Screenshot from 2024-10-09 13-02-03](https://github.com/user-attachments/assets/2f13247b-5ed3-46a2-b3a5-6ba4119af57e)
-![Screenshot from 2024-10-09 13-02-03](https://github.com/user-attachments/assets/6139f4ec-cc1d-4715-9f7a-adb9951eb818)
 
 
 
