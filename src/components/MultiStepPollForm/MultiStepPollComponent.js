@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Container, Row, Col, Button, OverlayTrigger, Tooltip } from 'react-bootstrap';
-import { HandThumbsUp, HandThumbsDown, QuestionCircle } from 'react-bootstrap-icons';
 import './MultiStepPoll.scss'; 
 
 const PollStep = ({ title, onSelect, renderDots, isAnimating, isFinalPoll, finalData}) => {
@@ -24,7 +23,7 @@ const PollStep = ({ title, onSelect, renderDots, isAnimating, isFinalPoll, final
           {renderDots()}
         </div>
         {!isFinalPoll ? (
-          <h3 className={`poll-transition ${isAnimating ? 'slide-out' : 'slide-in'}`}  data-testid="poll-step">{title}</h3>
+          <h2 className={`poll-transition ${isAnimating ? 'slide-out' : 'slide-in'}`}  data-testid="poll-step">{title}</h2>
         ) : (
           <div className="last-poll-output">
           {finalData?.map((detail, index) => (
@@ -48,7 +47,7 @@ const PollStep = ({ title, onSelect, renderDots, isAnimating, isFinalPoll, final
                 onClick={() => handleSelect('Great!')}
                 className="poll-button"
               >
-                <HandThumbsUp size={36} />
+        &#128077;  
               </Button>
             </OverlayTrigger>
           </Col>
@@ -62,7 +61,7 @@ const PollStep = ({ title, onSelect, renderDots, isAnimating, isFinalPoll, final
                 onClick={() => handleSelect('neutral')}
                 className="poll-button"
               >
-                <QuestionCircle size={36} />
+                &#129300;
               </Button>
             </OverlayTrigger>
           </Col>
@@ -76,7 +75,7 @@ const PollStep = ({ title, onSelect, renderDots, isAnimating, isFinalPoll, final
                 onClick={() => handleSelect('Not Good')}
                 className="poll-button"
               >
-                <HandThumbsDown size={36} />
+             &#128078;
               </Button>
             </OverlayTrigger>
           </Col>

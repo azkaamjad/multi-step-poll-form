@@ -35,6 +35,9 @@
       display: flex;
       justify-content: space-around;
       width: 50%;
+      .poll-button{
+        font-size:45px;
+      }
       @media (max-width: 525px) {
         width: 100%;
       }
